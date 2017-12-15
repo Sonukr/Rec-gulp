@@ -15,6 +15,16 @@ gulp.task('watch', function () {
 });
 
 
+gulp.task('clean', function() {
+  // You can use multiple globbing patterns as you would with `gulp.src`
+   del(['./src/main.css']);
+});
+
+// copy task
+gulp.task('copy', function () {
+    gulp.src('./src/css/main.css')
+        .pipe(gulp.dest('./src/'));
+});
 
 //call the default task in which call above task as dependency
 gulp.task('default', ['sass', 'watch']);
